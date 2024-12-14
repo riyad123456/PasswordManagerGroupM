@@ -24,20 +24,14 @@ app.MapGet("/", () => { return Results.Ok("Welcome to the password manager app m
 app.MapPost("/passwords", (PasswordEntry passwordEntry) =>
 {
     int id = passwordEntry.Id;
-    if (PasswordCache.GetPasswordEntryById($"password:{id}") != null)
-    {
-        return Results.BadRequest($"Id {id}: Id already exists.");
-    }
-    var validationError = PasswordUtils.ValidateEntry(passwordEntry);
-    if (validationError != null)
-    {
-        return Results.BadRequest(validationError);
-    }
-    PasswordCache.AddOrUpdatePasswordEntry(
+    bool addToCache = PasswordCache.AddOrUpdatePasswordEntry(
         key: $"password:{id}",
         entry: passwordEntry,
         durationInSeconds: CachingTime
     );
+    if (!addToCache) {
+        return Results.BadRequest("Request Failed: Entry already exists or wrong input format.");
+    }
     return Results.Ok("Entry added successfully!");
 });
 
@@ -90,7 +84,7 @@ app.MapPut("/passwords/item/{id}", (int id, PasswordEntry updatedEntry) =>
 {
     if (!PasswordCache.UpdateEntry($"password:{id}", updatedEntry, CachingTime))
     {
-        return Results.NotFound($"ID {id}: Not found.");
+        return Results.NotFound($"ID Not found or invalid updated entry format.");
     }
 
     return Results.Ok($"ID {id}: Entry updated.");

@@ -5,14 +5,19 @@ namespace PasswordManager.Utils;
 public static class PasswordCache
 {
     private static MemoryCache _cache = MemoryCache.Default;
-    public static void AddOrUpdatePasswordEntry(string key, PasswordEntry entry, int durationInSeconds)
+    public static bool AddOrUpdatePasswordEntry(string key, PasswordEntry entry, int durationInSeconds)
     {
         var policy = new CacheItemPolicy
         {
             AbsoluteExpiration = DateTimeOffset.Now.AddSeconds(durationInSeconds)
         };
-
+        var validationError = PasswordUtils.ValidateEntry(entry);
+        if (GetPasswordEntryById(key) != null || validationError != null)
+        {
+            return false;
+        }
         _cache.Set(key, entry, policy);
+        return true;
     }
 
     public static PasswordEntry? GetPasswordEntryById(string key)
@@ -33,10 +38,16 @@ public static class PasswordCache
     {
         if (_cache.Contains(key))
         {
-            AddOrUpdatePasswordEntry(key, updatedEntry, durationInSeconds);
+            bool addToCache = AddOrUpdatePasswordEntry(
+                key: key,
+                entry: updatedEntry,
+                durationInSeconds: 500
+            );
+            if (!addToCache) {
+                return false;
+            }
             return true;
         }
-
         return false;
     }
 
