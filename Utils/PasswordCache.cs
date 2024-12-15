@@ -38,15 +38,14 @@ public static class PasswordCache
     {
         if (_cache.Contains(key))
         {
-            bool addToCache = AddOrUpdatePasswordEntry(
-                key: key,
-                entry: updatedEntry,
-                durationInSeconds: 500
-            );
-            if (!addToCache) {
-                return false;
+            var policy = new CacheItemPolicy
+            {
+                AbsoluteExpiration = DateTimeOffset.Now.AddSeconds(durationInSeconds)
+            };
+            if (PasswordUtils.ValidateEntry(updatedEntry) == null) {
+                _cache.Set($"password:{updatedEntry.Id}", updatedEntry, policy);
+                return true;
             }
-            return true;
         }
         return false;
     }
