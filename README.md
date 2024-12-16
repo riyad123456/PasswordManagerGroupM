@@ -8,20 +8,21 @@ This document outlines the testing of the API endpoints for the Password Manager
 
 ### **Add new password entries:**
 
-<img src="testingEvidence/1.1.png" alt="Alt Text" title="Optional Title" width="350">
-<img src="testingEvidence/1.2.png" alt="Alt Text" title="Optional Title" width="350">
-<img src="testingEvidence/1.3.png" alt="Alt Text" title="Optional Title" width="350">
-<img src="testingEvidence/1.4.png" alt="Alt Text" title="Optional Title" width="350">
-
+<div display="flex">
+<img src="testingEvidence/1.1.png" alt="Alt Text" title="Optional Title" width="400">
+<img src="testingEvidence/1.2.png" alt="Alt Text" title="Optional Title" width="400">
+<img src="testingEvidence/1.3.png" alt="Alt Text" title="Optional Title" width="400">
+<img src="testingEvidence/1.4.png" alt="Alt Text" title="Optional Title" width="400">
+</div>
 
 
 ### **Add new password entry with invalid input:**
 
-<img src="testingEvidence/1.5.png" alt="Alt Text" title="Optional Title" width="350">
+<img src="testingEvidence/1.5.png" alt="Alt Text" title="Optional Title" width="600">
 
 ### **Add new password entry with existing id:**
 
-<img src="testingEvidence/1.6.png" alt="Alt Text" title="Optional Title" width="350">
+<img src="testingEvidence/1.6.png" alt="Alt Text" title="Optional Title" width="600">
 
 
 
@@ -31,7 +32,7 @@ This document outlines the testing of the API endpoints for the Password Manager
 
 ### **Get a password entry by username:**
 
-<img src="testingEvidence/2.1.png" alt="Alt Text" title="Optional Title" width="350">
+<img src="testingEvidence/2.1.png" alt="Alt Text" title="Optional Title" width="600">
 
 
 
@@ -40,7 +41,7 @@ This document outlines the testing of the API endpoints for the Password Manager
 
 ### **Get a password entry by id:**
 
-<img src="testingEvidence/3.1.png" alt="Alt Text" title="Optional Title" width="350">
+<img src="testingEvidence/3.1.png" alt="Alt Text" title="Optional Title" width="600">
 
 
 
@@ -50,7 +51,7 @@ This document outlines the testing of the API endpoints for the Password Manager
 
 ### **Update password by id:**
 
-<img src="testingEvidence/4.1.png" alt="Alt Text" title="Optional Title" width="350">
+<img src="testingEvidence/4.1.png" alt="Alt Text" title="Optional Title" width="600">
 
 
 
@@ -60,10 +61,10 @@ This document outlines the testing of the API endpoints for the Password Manager
 
 ### **Delete password by id:**
 
-
-<img src="testingEvidence/5.1.png" alt="Alt Text" title="Optional Title" width="350">
-<img src="testingEvidence/5.2.png" alt="Alt Text" title="Optional Title" width="350">
-
+<div display="flex">
+<img src="testingEvidence/5.1.png" alt="Alt Text" title="Optional Title" width="400">
+<img src="testingEvidence/5.2.png" alt="Alt Text" title="Optional Title" width="400">
+</div>
 
 ---
 
@@ -71,9 +72,10 @@ This document outlines the testing of the API endpoints for the Password Manager
 
 ### **Get decrypted password by id:**
 
-<img src="testingEvidence/6.1.png" alt="Alt Text" title="Optional Title" width="350">
-<img src="testingEvidence/6.2.png" alt="Alt Text" title="Optional Title" width="350">
-
+<div display="flex">
+<img src="testingEvidence/6.1.png" alt="Alt Text" title="Optional Title" width="400">
+<img src="testingEvidence/6.2.png" alt="Alt Text" title="Optional Title" width="400">
+</div>
 
 
 ---
