@@ -61,10 +61,10 @@ This document outlines the testing of the API endpoints for the Password Manager
 
 ### **Delete password by id:**
 
-<div display="flex">
-<img src="testingEvidence/5.1.png" alt="Alt Text" title="Optional Title" width="400">
-<img src="testingEvidence/5.2.png" alt="Alt Text" title="Optional Title" width="400">
-</div>
+
+<img src="testingEvidence/5.1.png" alt="Alt Text" title="Optional Title" width="600">
+<img src="testingEvidence/5.2.png" alt="Alt Text" title="Optional Title" width="600">
+
 
 ---
 
