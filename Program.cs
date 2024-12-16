@@ -38,8 +38,8 @@ app.MapPost("/passwords", (PasswordEntry passwordEntry) =>
 // Get the list of all passwords for the user.
 app.MapGet("/passwords/{userName}", (string userName) =>
 {
-    var userPasswords = PasswordCache.GetPasswordEntriesByUserName(userName); ;
-    if (userPasswords == null)
+    var userPasswords = PasswordCache.GetPasswordEntriesByUserName(userName);
+    if (userPasswords.Count == 0)
     {
         return Results.NotFound($"User {userName} has no passwords.");
     }
